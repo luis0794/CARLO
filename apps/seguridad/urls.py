@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     url(r'^usuarios/$', usuarios, name='usuarios'),
     url(r'^puertas/$', vista_puertas, name='puertas'),
     url(r'^usuarios/ingresarusuario/$', ingresarusuario, name='ingresarusuario'),
-    url(r'^modificarcontrasena/$', modificarcontrasena, name='modificarcontrasena'),
+    url(r'^usuarios/modificarcontrasena/$', modificarcontrasena, name='modificarcontrasena'),
 
 
 )
