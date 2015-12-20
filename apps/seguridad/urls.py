@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^index/$','prueba.views.index_view',name='index'),
     url(r'^registros/$', registros, name='registros'),
     url(r'^usuarios/$', usuarios, name='usuarios'),
-    url(r'^puertas/$', puertas, name='puertas'),
+    url(r'^puertas/$', vista_puertas, name='puertas'),
     url(r'^usuarios/ingresarusuario/$', ingresarusuario, name='ingresarusuario'),
     url(r'^modificarcontrasena/$', modificarcontrasena, name='modificarcontrasena'),
 
