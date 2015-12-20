@@ -30,5 +30,4 @@ def ingresarusuario(request):
     return render_to_response('ingresarusuario.html',context=RequestContext(request))
 
 def modificarcontrasena(request):
-    return render_to_response('modificarcontrasena.html',context=RequestContext
-    
+    return render_to_response('modificarcontrasena.html',context=RequestContext(request))  
