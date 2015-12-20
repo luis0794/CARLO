@@ -1,0 +1,158 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+
+<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron">
+			  <h3 align="center">Ingresar Usuario</h3>
+			</div>
+		</div>
+</div>
+
+
+
+<form id="frmPrincipal" method="POST" action="/ingresarUsuario/" class="well" role="form">
+
+    <div class="row">
+
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="idNombre">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" id="idNombre" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="idApellido">Apellido</label>
+                        <input type="text" name="apellido" class="form-control" id="idApellido" required="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="idUsername">Username </label>
+                        <input type="text" name="username2" class="form-control" id="idUsername" required="">
+                        <label id="mensaje" style="color:#EF4836;"></label>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="idPassword">Password</label>
+                        <input type="password3" name="passwd2" class="form-control" id="idPassword" required="">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="lab1" name="lab1" value="lab1">&nbsp;LABORATORIO 1</label>
+                </div>
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="lab2" name="lab2" value="lab2">&nbsp;LABORATORIO 2</label>
+                </div>
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="lab3" name="lab3" value="lab3">&nbsp;LABORATORIO 3</label>
+                </div>
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="lab4" name="lab4" value="lab4">&nbsp;LABORATORIO 4</label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="lab5" name="lab5" value="lab5">&nbsp;LABORATORIO 5</label>
+                </div>
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="lab6" name="lab6" value="lab6">&nbsp;LABORATORIO 6</label>
+                </div>
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="telecomunicaciones" name="telecomunicaciones" value="telecomunicaciones">&nbsp;TELECOMUNICACIONES</label>
+                </div>
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="mac" name="mac" value="mac">&nbsp;MAC</label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="direccion" name="direccion" value="direccion">&nbsp;DIRECCION</label>
+                </div>
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="electronica" name="electronica" value="electronica">&nbsp;ElECTRONICA</label>
+                </div>
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="ciditec" name="ciditec" value="ciditec">&nbsp;CIDITEC</label>
+                </div>
+
+                <div class="col-md-3">
+                <label><input type="checkbox" id="administradorTecnico" name="administradorTecnico" value="administradorTecnico">&nbsp;ADM TECNICO</label>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+
+
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+        <label id="mensaje2" style="color:#EF4836;"></label>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3 col-xs-6">
+
+
+            <button type="button" onclick="verificar()" class="btn btn-primary">GUARDAR</button>
+        </div>
+        <div class="col-md-3 col-xs-6">
+
+            <button type="button" onclick="window.location.href='/administrador/'" class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
+        </div>
+
+        <div class="col-md-3"></div>
+
+    </div>
+
+    </form>
+
+
+
+
+
+
+{% endblock content %}
