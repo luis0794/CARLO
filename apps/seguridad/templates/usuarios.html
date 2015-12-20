@@ -1,34 +1,30 @@
-{% extends "index.html" %}
-{% load staticfiles %}
-{% block content %}
+{% extends "base.html" %}
+{% block titulo %}
+	Usuarios Registrados
+{% endblock %}
+{% block contenido %}
 
-<body style="text-align: justify;">
-
-
-	<div class="row">
-		<div class="col-md-12"> 
-			<div class="jumbotron">
-			  <h2 align="center">Registro de apertura de Laboratorios y Oficinas</h2>
-			</div>
-		</div>
-	</div>
-
+<br>
+<br>
+<br>
+<form id="" method="POST" class="well">
     <div class="row">
         <div class="col-md-1">
         </div>
         <div class="col-md-2">
-			<button class="btn btn-danger" type="button"><a href="{% url 'ingresarusuario' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"> Agregar Usuario</span></a></button>
+			<button class="btn btn-danger" type="button" onclick="window.location.href='ingresarusuario'">Agregar Usuario</button>
 		</div>
 	</div>
-
+	<br>
 	<div class="row">
 
         <div class="col-md-1">
-}		</div>
-
-		<div class="col-md-2 text-right">
-			<p>                       Registros por pagina:</p>
 		</div>
+
+		<div class="col-md-2 ">
+			<h5><b>Registros por pagina:</b></h5>
+		</div>
+
 		<div class="col-md-1">
 			<div class="dropdown">
 			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -43,6 +39,7 @@
 			</div>
 		</div>
 
+
          <div class="col-md-4">
         </div>
 
@@ -55,6 +52,7 @@
 		    </div>
 		</div>
 	</div>
+	<br>
 
 	<div class="row">
         <div class="col-md-1">
@@ -110,7 +108,7 @@
 			</nav>
 		</div>
 	</div>
-</body>
+	</form>
 
 
-{% endblock content %}
+{% endblock contenido %}

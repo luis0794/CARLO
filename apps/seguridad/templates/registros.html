@@ -1,23 +1,14 @@
-{% extends "index.html" %}
-{% load staticfiles %}
-{% block content %}
+{% extends "base.html" %}
+{% block titulo %}
+	Registros
+{% endblock %}
+{% block contenido %}
 
 
-
+<br>
+<br>
+<br>
 <body style="text-align: justify;">
-
-
-
-    <div class="row">
-		<div class="col-md-12"> 
-			<div class="jumbotron">
-			  <h3 align="center">Registro de apertura de Laboratorios y Oficinas</h3>
-			</div>
-		</div>
-	</div>
-
-
-
 
 	<div class="row">
 
@@ -60,8 +51,8 @@
 	<div class="row" align="center">
         <div class="col-md-1">
         </div>
-		<div class="col-md-10">
-			<table class="table" align="center">
+		<div class="col-md-10 table-responsive">
+			<table class="table table-striped" bgcolor="blue" align="center">
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -114,4 +105,4 @@
 </body>
 
 
-{% endblock content %}
+{% endblock contenido %}
