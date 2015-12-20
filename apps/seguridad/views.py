@@ -18,7 +18,7 @@ def vista_puertas(request):
 
 
 def index_view(request):
-    return render_to_response('index.html',context=RequestContext(request))
+    return render_to_response('inicio.html',context=RequestContext(request))
 
 def registros(request):
     return render_to_response('registros.html',context=RequestContext(request))
