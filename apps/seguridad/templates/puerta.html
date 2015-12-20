@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block titulo %}
+	Inicio
+{% endblock %}
+{% block contenido %}
+{% load static from staticfiles %}
+<br>
+
+<div class="col-md-1">
+     </div>
+
+<div class="col-md-10">
+
+			<table class="table">
+			    <tbody>
+			      <tr>
+			        <td>
+                        <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                        <img src="{% static 'img/lab1.png' %}" >
+                        </a>
+                        </div>
+                    </td>
+			        <td>
+                        <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab2.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+			        <td>
+                        <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab3.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+
+			        </tr>
+                <tr>
+			        <td>
+                        <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab4.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+			        <td>
+                        <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab5.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+			        <td>
+                       <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab6.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+
+			        </tr>
+                <tr>
+			        <td>
+                      <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab1.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+			        <td>
+                        <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab1.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+			        <td>
+                       <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab1.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+
+			        </tr>
+                <tr>
+			        <td>
+                        <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab1.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+			        <td>
+                       <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab1.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+			        <td>
+                       <div class="col-md-16">
+                        <a href="#" class="thumbnail">
+                    <img src="{% static 'img/lab1.png' %}" >
+                    </a>
+                    </div>
+                    </td>
+
+			        </tr>
+
+			    </tbody>
+			  </table>
+		</div>
+
+
+<div class="col-md-1">
+     </div>
+
+
+<div class="row">
+  <div class="col-md-12 well" style="text-align:center;">
+    <button class="btn btn-info" onclick="window.location='http://192.168.0.110/pulso.php'">PUERTA 1</button>
+    <button class="btn btn-info" onclick="window.location='http://192.168.0.104/pulso.php'">PUERTA 2</button> 
+    <button class="btn btn-info" onclick="abrirPuerta(3)">PUERTA 3</button> 
+    <button class="btn btn-info" onclick="abrirPuerta(4)">PUERTA 4</button> 
+  </div>
+</div>
+
+
+
+ 
+
+{% endblock %}

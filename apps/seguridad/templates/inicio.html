@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block titulo %}
+	Inicio
+{% endblock %}
+{% block contenido %}
+<br>
+<div class="row">
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6 contenedor well" align="center">
+        <hr>
+            <h1 class="titulo">¿Qué es Inmótica?</h1>
+        <hr>
+        <p class="resumen" style="background-color: transparent">
+            La inmótica es un modo de gestión remoto, centralizado y automatizado que
+            supone la implementación de sistemas en las instalaciones de
+            edificios con el fin de optimizar recursos, reducir costes y
+            disminuir el consumo de energía innecesario, al mismo tiempo que
+            aumenta la seguridad y el confort.
+        </p>
+        <br>
+    
+        <button class="btn btn-primary entrar" type="button" onclick="window.location='/login/'">ENTRAR</button>
+    
+        <hr>
+    </div>
+    <div class="col-md-3"></div>
+
+</div>
+
+
+{% endblock %}
