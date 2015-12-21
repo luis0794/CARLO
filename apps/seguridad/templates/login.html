@@ -11,7 +11,9 @@
 
     <div class="col-md-4">
 
-    <form method="post" action="" class="form-signin well" role="form">
+    <form method="post" action="" class="form-signin well" role="form" name="frmLogin">
+
+      {% csrf_token %}
         <h2 class="form-signin-heading" id="nombreForm">Acceso</h2>
           <label class="alert-danger" id="mensajeErrorLogin"></label>
           
@@ -82,6 +84,9 @@
 
 <script type="text/javascript">
 
+  function enviar_formulario(){ 
+      document.frmLogin.submit() 
+  } 
 
 
   function verlimite(){
@@ -89,14 +94,7 @@
     var tam = valorActual.length;
     if(tam==6){
       var valorActual = $("#pinAcceso").val();
-      if(valorActual == '199400'){
-          window.location = "/puertas/";
-      }else{
-          $('#mensajeErrorLogin').html('Error de PIN');
-      }
-      
-    }else{
-      $('#mensajeErrorLogin').html('');
+      enviar_formulario();
     }
   }
 
@@ -110,11 +108,7 @@
     }
     if(tam==5){
       var valorActual = $("#pinAcceso").val();
-      if(valorActual == '199400'){
-          window.location = "/puertas/";
-      }else{
-          $('#mensajeErrorLogin').html('Error de PIN');
-      }
+      enviar_formulario();
     }
 	}
 
