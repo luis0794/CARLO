@@ -127,5 +127,9 @@ STATICFILES_DIRS = [BASE_DIR.child('static')]
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
 
+# Redirect when login is correct.
+LOGIN_REDIRECT_URL = "/inicio"
+
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

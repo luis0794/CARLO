@@ -1,13 +1,12 @@
-from django.shortcuts import render, RequestContext, render_to_response, redirect
+from django.shortcuts import render, RequestContext, render_to_response
 from django.http import request, HttpResponse, HttpResponseRedirect, Http404
-from .forms import RegistroUserForm
 
 from django.contrib.auth.models import User
-
 from django.core.urlresolvers import reverse
+from django.http.response import HttpResponseRedirect
+from django.template.context import RequestContext
 
-from .forms import RegistroUserForm
-from .models import UserProfile
+from .forms import SignUpForm
 
 
 import time
@@ -35,28 +34,28 @@ def usuarios(request):
     return render_to_response('usuarios.html',context=RequestContext(request))
 
 def ingresarusuario(request):
-	if request.method == 'POST':
-		form = RegistroUserForm(request.POST, request.FILES)
+	if request.method == 'POST': 
+		form = SignUpForm(request.POST)  # A form bound to the POST data
 		if form.is_valid():
-			cleaned_data = form.cleaned_data
-			username = cleaned_data.get('username')
-			password = cleaned_data.get('password')
-			photo = cleaned_data.get('photo')
-			user_model = User.objects.create_user(username=username, password=password)
-			user_model.save()
-			user_profile = UserProfile()
-			user_profile.user = user_model
-			user_profile.photo = photo
-			user_profile.save()
-			return redirect(reverse('usuarios.html', kwargs={'username': username}))
-		else:
-			form = RegistroUserForm()
-		context = {'form': form}
-		return render(request, 'usuarios.html', context)
+			username = form.cleaned_data["username"]
+			password = form.cleaned_data["password"]
+			first_name = form.cleaned_data["first_name"]
+			last_name = form.cleaned_data["last_name"]
+			user = User.objects.create_user(username, password)
+			user.first_name = first_name
+			user.last_name = last_name
 
+			user.save()
 
-def gracias_view(request, username):
-    return render(request, 'usuarios', {'username': username})
+			return HttpResponseRedirect(reverse('usuarios'))
+	else:
+		form = SignUpForm()
+
+	data = {
+		'form': form,
+	}
+	return render_to_response('ingresarusuario.html', data, context_instance=RequestContext(request))
+
 
 def modificarcontrasena(request):
     return render_to_response('modificarcontrasena.html',context=RequestContext(request))  
