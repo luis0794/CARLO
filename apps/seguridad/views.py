@@ -61,5 +61,12 @@ def ingresarusuario(request):
 	return render_to_response('ingresarusuario.html', data, context_instance=RequestContext(request))
 
 
+#class editarusuario(UpdateView):
+ #   model = UsuerProfile
+  #  fields = ('usu_ced','usu_nom','usu_ape','usu_sex','usu_dir','usu_tel','usu_ema')
+   # template_name = 'edituser.html'
+    #success_url = '/usuario/Administrar/'
+
+
 def modificarcontrasena(request):
     return render_to_response('modificarcontrasena.html',context=RequestContext(request))  
