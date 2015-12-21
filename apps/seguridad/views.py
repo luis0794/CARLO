@@ -8,6 +8,8 @@ from django.template.context import RequestContext
 
 from .forms import SignUpForm
 
+from .models import *
+
 
 import time
 
@@ -31,8 +33,10 @@ def registros(request):
     return render_to_response('registros.html',context=RequestContext(request))
 
 def usuarios(request):
-    return render_to_response('usuarios.html',context=RequestContext(request))
-
+	usu=UserProfile.objects.all()
+	return render_to_response('usuarios.html',{'usu':usu},context_instance=RequestContext(request))
+	
+	
 def ingresarusuario(request):
 	if request.method == 'POST': 
 		form = SignUpForm(request.POST)  # A form bound to the POST data
