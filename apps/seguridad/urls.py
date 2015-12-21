@@ -1,6 +1,7 @@
 # -*- coding: utf-8
 from django.conf.urls import patterns, include, url
 from .views import *
+from . import views
 
 
 urlpatterns = patterns('',
@@ -11,7 +12,7 @@ urlpatterns = patterns('',
     url(r'^registros/$', registros, name='registros'),
     url(r'^usuarios/$', usuarios, name='usuarios'),
     url(r'^puertas/$', vista_puertas, name='puertas'),
-    url(r'^usuarios/ingresarusuario/$', ingresarusuario, name='ingresarusuario'),
+    url(r'^usuarios/ingresarusuario/$', views.ingresarusuario, name='ingresarusuario'),
     url(r'^usuarios/modificarcontrasena/$', modificarcontrasena, name='modificarcontrasena'),
 
 

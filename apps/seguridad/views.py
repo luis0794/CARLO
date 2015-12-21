@@ -1,6 +1,6 @@
 from django.shortcuts import render, RequestContext, render_to_response
 from django.http import request, HttpResponse, HttpResponseRedirect, Http404
-from .forms import *
+from .forms import RegistroUserForm
 
 
 import time
@@ -32,10 +32,10 @@ def ingresarusuario(request):
 		form = RegistroUserForm(request.POST, request.FILES)
 	else:
 		form = RegistroUserForm()
-		context = {
+	context = {
 		'form': form
-		}
-		return render_to_response('ingresarusuario.html',context=RequestContext(request))
+	}
+	return render_to_response('ingresarusuario.html',context=RequestContext(request))
 
 def modificarcontrasena(request):
     return render_to_response('modificarcontrasena.html',context=RequestContext(request))  

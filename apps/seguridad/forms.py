@@ -17,10 +17,24 @@ class RegistroUserForm(forms.Form):
             raise forms.ValidationError('Nombre de usuario ya registrado.')
         return username
 
-        
+
     def clean_password2(self):
         password = self.cleaned_data['password']
         password2 = self.cleaned_data['password2']
         if password != password2:
             raise forms.ValidationError('Las contraseñas no coinciden.')
         return password2
+
+username = forms.CharField(
+    min_length=5,
+    widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+password = forms.CharField(
+    min_length=5,
+    widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+
+password2 = forms.CharField(
+    min_length=5,
+    widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+
+photo = forms.ImageField(required=False)
