@@ -11,14 +11,14 @@
 
     <div class="col-md-4">
 
-    <form method="post" action="" class="form-signin well" role="form">
+    <form method="post" action="/verificar/" class="form-signin well" role="form">
         <h2 class="form-signin-heading" id="nombreForm">Acceso</h2>
-          <label class="alert-danger" id="mensajeErrorLogin"></label>
+          <label class="alert-danger"></label>
           
         
         <div class="input-group">
         
-	      <input type="password" class="form-control input-lg" id="pinAcceso" placeHolder="Contraseña" onkeyup="verlimite()" maxlength="6">
+	      <input type="password" class="form-control input-lg" id="pinAcceso" placeHolder="Contraseña">
 	      <span class="input-group-btn">
 	        <button class="btn btn-default input-lg" type="button" onclick="borrarcaracterpin()">x</button>
 	      </span>
@@ -81,41 +81,16 @@
 
 
 <script type="text/javascript">
-
-
-
-  function verlimite(){
-    var valorActual = $("#pinAcceso").val();
-    var tam = valorActual.length;
-    if(tam==6){
-      var valorActual = $("#pinAcceso").val();
-      if(valorActual == '199400'){
-          window.location = "/puertas/";
-      }else{
-          $('#mensajeErrorLogin').html('Error de PIN');
-      }
-      
-    }else{
-      $('#mensajeErrorLogin').html('');
-    }
-  }
-
 	function teclado(valor){
     var valorActual = $("#pinAcceso").val();
-    var tam = valorActual.length;
-		if (tam<6)
+		if (valorActual.length<6)
     {
       $("#pinAcceso").val(valorActual+valor);
       var valorActual = $("#pinAcceso").val();
+    }else{
+      alert('LIMITE DE INGRESO');
     }
-    if(tam==5){
-      var valorActual = $("#pinAcceso").val();
-      if(valorActual == '199400'){
-          window.location = "/puertas/";
-      }else{
-          $('#mensajeErrorLogin').html('Error de PIN');
-      }
-    }
+    
 	}
 
   function borrarcaracterpin(){
@@ -126,10 +101,6 @@
       nuevoValor=nuevoValor+valorActual[i];
     }
     $("#pinAcceso").val(nuevoValor);
-    var tam = valorActual.length;
-    if(tam<7){
-      $('#mensajeErrorLogin').html('');
-    }
     
   }
 
