@@ -1,6 +1,12 @@
 from django.shortcuts import render, RequestContext, render_to_response
 from django.http import request, HttpResponse, HttpResponseRedirect, Http404
-from .forms import RegistroUserForm
+
+from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
+from django.http.response import HttpResponseRedirect
+from django.template.context import RequestContext
+
+from .forms import SignUpForm
 
 
 import time
@@ -28,14 +34,28 @@ def usuarios(request):
     return render_to_response('usuarios.html',context=RequestContext(request))
 
 def ingresarusuario(request):
-	if request.method == 'POST':
-		form = RegistroUserForm(request.POST, request.FILES)
+	if request.method == 'POST': 
+		form = SignUpForm(request.POST)  # A form bound to the POST data
+		if form.is_valid():
+			username = form.cleaned_data["username"]
+			password = form.cleaned_data["password"]
+			first_name = form.cleaned_data["first_name"]
+			last_name = form.cleaned_data["last_name"]
+			user = User.objects.create_user(username, password)
+			user.first_name = first_name
+			user.last_name = last_name
+
+			user.save()
+
+			return HttpResponseRedirect(reverse('usuarios'))
 	else:
-		form = RegistroUserForm()
-	context = {
-		'form': form
+		form = SignUpForm()
+
+	data = {
+		'form': form,
 	}
-	return render_to_response('ingresarusuario.html',context=RequestContext(request))
+	return render_to_response('ingresarusuario.html', data, context_instance=RequestContext(request))
+
 
 def modificarcontrasena(request):
     return render_to_response('modificarcontrasena.html',context=RequestContext(request))  
